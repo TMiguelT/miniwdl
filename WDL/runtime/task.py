@@ -448,7 +448,7 @@ class SwarmContainer(TaskContainer):
                     [
                         "wdl",
                         str(os.getpid()),
-                        socket.gethostname()[:12],
+                        os.environ.get("AWS_BATCH_JOB_ID", socket.gethostname())[:12],
                         str(SwarmContainer._id_counter.next()),
                         self.run_id,
                     ]
