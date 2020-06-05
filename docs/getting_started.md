@@ -29,7 +29,7 @@ Please [file any issues](https://github.com/chanzuckerberg/miniwdl/issues) that 
 
 ## Fetch viral-pipelines
 
-For this exercise we'll use the [Broad Institute's viral sequencing pipeline](https://github.com/broadinstitute/viral-pipelines/) which includes an EBOV test dataset. Start by fetching a copy,
+For this exercise we'll use the [Broad Institute's viral sequencing pipeline](https://github.com/broadinstitute/viral-pipelines/), which includes a small EBOV dataset for testing. Start by fetching a copy,
 
 ```
 wget -nv -O - https://github.com/broadinstitute/viral-pipelines/archive/v2.1.0.2.tar.gz | tar zx
@@ -41,7 +41,7 @@ cd viral-pipelines-*
 First we can use miniwdl to preview the inputs and outputs of the [reference-based assembly workflow](https://github.com/broadinstitute/viral-pipelines/blob/master/pipes/WDL/workflows/assemble_refbased.wdl):
 
 ```
-$ miniwdl run pipes/WDL/workflows/assemble_refbased.wdl --path pipes/WDL/tasks
+$ miniwdl run pipes/WDL/workflows/assemble_refbased.wdl
 
 missing required inputs for assemble_refbased: reads_unmapped_bams, reference_fasta
 
@@ -62,16 +62,13 @@ outputs:
   ...
 ```
 
-* The ``--path`` argument is needed because the assemble_refbased.wdl workflow imports WDL tasks from a separate library directory. Simpler WDL codebases won't need this argument.
-
 To invoke the workflow, miniwdl can accept the inputs as command-line arguments in most cases. Here we'll start it on the test reads and EBOV reference genome included in the repository:
 
 ```
 $ miniwdl run pipes/WDL/workflows/assemble_refbased.wdl   \
     reads_unmapped_bams=test/input/G5012.3.testreads.bam  \
     reference_fasta=test/input/ebov-makona.fasta          \
-    sample_name=G5012.3                                   \
-    --path pipes/WDL/tasks --verbose
+    sample_name=G5012.3 --verbose
 ```
 
 The workflow should finish in just a few minutes.
