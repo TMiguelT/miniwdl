@@ -23,9 +23,9 @@ Then open a command prompt and try,
 
 ```miniwdl run_self_test```
 
-to test that miniwdl and Docker are set up properly to run a trivial built-in workflow. This should print numerous log messages, and conclude with `miniwdl run_self_test OK` in about 30 seconds.
+...to test the installation with a trivial built-in workflow. This should print numerous log messages, and conclude with `miniwdl run_self_test OK` in about 30 seconds.
 
-Please [file any issues](https://github.com/chanzuckerberg/miniwdl/issues) that arise!
+On macOS, you'll first need to override the `TMPDIR` environment variable, e.g. `export TMPDIR=/tmp`, to allow Docker containers to mount shared working directories. Please [file any other issues](https://github.com/chanzuckerberg/miniwdl/issues) that arise!
 
 ## Fetch viral-pipelines
 
