@@ -38,7 +38,7 @@ cd viral-pipelines-*
 
 ## Run assemble_refbased workflow
 
-First we can use miniwdl to preview the inputs and outputs of the [reference-based assembly workflow](https://github.com/broadinstitute/viral-pipelines/blob/master/pipes/WDL/workflows/assemble_refbased.wdl).
+First we can use miniwdl to preview the inputs and outputs of the [reference-based assembly workflow](https://github.com/broadinstitute/viral-pipelines/blob/master/pipes/WDL/workflows/assemble_refbased.wdl):
 
 ```
 $ miniwdl run pipes/WDL/workflows/assemble_refbased.wdl --path pipes/WDL/tasks
@@ -85,7 +85,7 @@ The workflow should finish in just a few minutes.
 
 By default, `miniwdl run` creates a new subdirectory of the current working directory, used for all of the workflow's operations. The subdirectory's name is timestamp-prefixed, so that multiple runs sort in the order they were invoked. The workflow directory can be overridden on the command line; see `miniwdl run --help` for details.
 
-The standard output from `miniwdl run` provides the subdirectory along with JSON describing the workflow outputs, for example (abbreivated):
+The standard output from `miniwdl run` provides the subdirectory along with JSON describing the workflow outputs, for example (abbreviated):
 
 ```
 {
