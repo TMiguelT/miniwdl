@@ -101,7 +101,7 @@ The standard output from `miniwdl run` provides the subdirectory along with JSON
 }
 ```
 
-This is also stored in `outputs.json` in the subdirectory. For your convenience, miniwdl furthermore generates a symbolic link `_LAST` pointing to the timestamped directory for most recent run; and an `output_links` directory tree containing symbolic links to the output files.
+This is also stored in `outputs.json` in the subdirectory. For your convenience, miniwdl furthermore generates a symbolic link `_LAST` pointing to the timestamped subdirectory for most recent run; and an `output_links` directory tree containing symbolic links to the output files.
 
 ```
 $ tree _LAST/output_links/
